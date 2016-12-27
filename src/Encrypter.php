@@ -60,7 +60,7 @@ class Encrypter extends BaseEncrypter
      */
     public function encrypt($value)
     {
-        $iv = random_bytes($this->getIvSize());
+        $iv = \random_bytes($this->getIvSize());
 
         $value = \openssl_encrypt(serialize($value), $this->cipher, $this->key, 0, $iv);
 
